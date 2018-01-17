@@ -1,0 +1,24 @@
+﻿* { margin:0px; padding:0px; } /*이걸 해야 따닥따닥 붙는다. 디폴트 마진이 모두 0이 되므로...*/ 
+h1 { font-weight:bold; font-size:20pt ; font-family:궁서; }
+h2 { font-weight:bold; font-size:14pt ; font-family:verdana; }
+header,section, footer, aside,nav, article,figure,figcaption,hgroup,div { display:block; } /* 지원안하는 브라우저들을 위해 */
+
+/*body 안의 것들은 센터 정렬???? 안되는데??*/
+body {text-align:center;  }  
+
+/*wrapper 안의 것들은 마진15px을 두고 왼쪽 정렬이다
+특히 magine 다음에 auto 가 꼭 있어야 이 div 가 body 가운데로 정렬된다.*/
+#wrapper {  width:900px; margin: 15px auto; text-align:left;  box-sizing:boder-box;} 
+#main_header { background:#fffbb9; border: 1px solid #999999; padding:20px; }
+#main_menu { background:#cccccc; padding:5px 15px;}
+#main_menu li {list-style:none; display:inline-block; padding:5px; font:bold 14px verdana; }
+
+
+#main_section { width: 660px; margin:20px 0px; float:left;}
+#main_aside { width:200px;  margin:20px 0px; padding : 10px; background:#cccccc; float:right;}
+#main_footer { clear:both; text-align:center; padding:20px; border-top:2px solid #999999; }
+
+article { background:#fffbcc; border:1px solid #999999; margin-bottom:15px;}
+article footer { text-align:right;}
+time {color:#999999;}
+figcaption { font: italic 14px verdana, sans-serif; }
