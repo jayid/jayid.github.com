@@ -34,6 +34,7 @@
 	}
 	function show(e)
 	{
+		alert(e.target.responseText);
 		this.article2.innerHTML = e.target.responseText;	
 	}
 	window.addEventListener('load', init, false);
