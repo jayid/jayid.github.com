@@ -3,6 +3,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
+	<meta http-equiv="cache-control" content="no-cache"/>
     <title></title>
     <link rel="stylesheet" href="my.css" />
     <style>  @import url(Widgets/widgets.css);</style>
@@ -25,6 +26,7 @@
 
 	function readRequest(url)
 	{
+		alert(url);
 		var request = new XMLHttpRequest();
 		request.addEventListener('load', show, false);
 		request.open("GET", url, true);
