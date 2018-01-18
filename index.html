@@ -4,63 +4,81 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
-<link rel="stylesheet" href="my.css" />  
- <style> 
- @import url(Widgets/widgets.css);
-   
- </style>
+    <link rel="stylesheet" href="my.css" />
+    <style>  @import url(Widgets/widgets.css);</style>
+	<script src="Cesium.js"></script>
+	<script>
+	var article2;
+	function init()
+	{
+		article2= document.getElementById('article2');
+		var art1 = document.getElementById('art1');
+		var art2 = document.getElementById('art2');
+		art1.addEventListener('click', 
+				function(){ var url='1.txt'; readRequest(url); }, 
+				false);
+		art2.addEventListener('click', 
+				function(){ var url='2.txt'; 	readRequest(url); }, 
+				false);
+		readRequest('1.txt');
+	}
 
-<script src="Cesium.js"></script>
-
-
-
+	function readRequest(url)
+	{
+		var request = new XMLHttpRequest();
+		request.addEventListener('load', show, false);
+		request.open("GET", url, true);
+		request.send(null);
+	}
+	function show(e)
+	{
+		article2.innerHTML = e.target.response.Text;	
+	}
+	windows.addEventListener('load', init, false);
+	</script>
 </head>
+
+
 <body>
-    <div id ="wrapper">
-    <header id ="main_header">
-        <h1> test </h1>
-    </header>
-    <nav id="main_menu">
-        <ul>
-            <li>home</li>
-            <li>photos</li>
-            <li>videos</li>
-            <li>contact</li>
-        </ul>
-    </nav>
-    <section id="main_section">
-                <article>
-            <header>
+    <div id="wrapper">
+        <header id="main_header">
+            <h1>test </h1>
+        </header>
+        <nav id="main_menu">
+            <ul>
+                <li>home</li>
+                <li>photos</li>
+                <li>videos</li>
+                <li>contact</li>
+            </ul>
+        </nav>
+        <section id="main_section">
+            <article id="article1">
+                <header>
                     <h1>Cesium Test</h1>
-           </header>
-		  <div id="cesiumContainer"></div>
-            <footer>
-            </footer>
-        </article>
+                </header>
+                <div id="cesiumContainer"></div>
+                <footer>
+                </footer>
+            </article>
 
-        <article>
-            <header>
-                    <h1>1st title</h1>
-             </header>
-            이것이 첫번째 포스트입니다...
-            <footer>
-            </footer>
-        </article>
+            <article id ="article2">
+            </article>
 
 
-    </section>
-    <aside id ="main_aside">
-        <blockquote>Article no.1</blockquote>
-        <blockquote>Article no.2</blockquote>
-    </aside>
-    <footer id="main_footer">
-        Copyright &copy 2010-2018
-    </footer>
-        
+        </section>
+        <aside id="main_aside">
+            <p id="art1">Article no.1</p>
+            <p id="art2">Article no.2</p>
+        </aside>
+        <footer id="main_footer">
+            Copyright &copy 2010-2018
+        </footer>
+
     </div>
 
 </body>
-    <script>
-     var viewer = new Cesium.Viewer('cesiumContainer');
+<script>
+    var viewer = new Cesium.Viewer('cesiumContainer');
 </script>
 </html>
