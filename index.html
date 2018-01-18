@@ -8,10 +8,9 @@
     <style>  @import url(Widgets/widgets.css);</style>
 	<script src="Cesium.js"></script>
 	<script>
-	var article2;
 	function init()
 	{
-		article2= document.getElementById('article2');
+		this.article2= document.getElementById('article2');
 		var art1 = document.getElementById('art1');
 		var art2 = document.getElementById('art2');
 		art1.addEventListener('click', 
@@ -21,7 +20,6 @@
 				function(){ var url='2.txt'; 	readRequest(url); }, 
 				false);
 		readRequest('1.txt');
-		alert('asdf');
 	}
 
 	function readRequest(url)
@@ -33,7 +31,7 @@
 	}
 	function show(e)
 	{
-		article2.innerHTML = e.target.response.Text;	
+		this.article2.innerHTML = e.target.response.Text;	
 	}
 	window.addEventListener('load', init, false);
 	</script>
