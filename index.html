@@ -27,7 +27,6 @@
 
 	function readRequest(url)
 	{
-		alert(url);
 		var request = new XMLHttpRequest();
 		request.addEventListener('load', show, false);
 		request.open("GET", url, true);
@@ -35,7 +34,6 @@
 	}
 	function show(e)
 	{
-		alert(e.target.responseText);
 		article2.innerHTML = e.target.responseText;	
 	}
 	window.addEventListener('load', init, false);
