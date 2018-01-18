@@ -20,6 +20,7 @@
 				function(){ var url='2.txt'; 	readRequest(url); }, 
 				false);
 		readRequest('1.txt');
+
 	}
 
 	function readRequest(url)
@@ -28,9 +29,11 @@
 		request.addEventListener('load', show, false);
 		request.open("GET", url, true);
 		request.send(null);
+		alert('read request');
 	}
 	function show(e)
 	{
+		alert('show');
 		this.article2.innerHTML = e.target.response.Text;	
 	}
 	window.addEventListener('load', init, false);
