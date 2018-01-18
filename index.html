@@ -9,11 +9,15 @@
     <style>  @import url(Widgets/widgets.css);</style>
 	<script src="Cesium.js"></script>
 	<script>
-	    var viewer = new Cesium.Viewer('cesiumContainer');
+	    var viewer;
 
 	var article2;
 	function init()
 	{
+		var cesiumContainer = 
+		document.getElementById('cesiumContainer');
+		viewer = new Cesium.Viewer(cesiumContainer);
+
 		article2= document.getElementById('article2');
 		var art1 = document.getElementById('art1');
 		var art2 = document.getElementById('art2');
