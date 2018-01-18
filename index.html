@@ -9,9 +9,10 @@
     <style>  @import url(Widgets/widgets.css);</style>
 	<script src="Cesium.js"></script>
 	<script>
+	var article2;
 	function init()
 	{
-		this.article2= document.getElementById('article2');
+		article2= document.getElementById('article2');
 		var art1 = document.getElementById('art1');
 		var art2 = document.getElementById('art2');
 		art1.addEventListener('click', 
@@ -35,7 +36,7 @@
 	function show(e)
 	{
 		alert(e.target.responseText);
-		this.article2.innerHTML = e.target.responseText;	
+		article2.innerHTML = e.target.responseText;	
 	}
 	window.addEventListener('load', init, false);
 	</script>
